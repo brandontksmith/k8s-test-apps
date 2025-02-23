@@ -8,6 +8,7 @@ spec:
     istio: ingressgateway
   servers:
   - hosts:
+    - "*.brandontksmith.com"
     - "brandontksmith.com" # UPDATE the domain name
     port:
       name: http
