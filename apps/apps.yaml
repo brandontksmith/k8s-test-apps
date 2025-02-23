@@ -23,7 +23,7 @@ spec:
       source:
         repoURL: https://github.com/brandontksmith/k8s-test-apps.git
         targetRevision: HEAD
-        path: apps/{{.cluster}}
+        path: apps/{{.cluster}}/**
       destination:
         server: '{{.url}}'
         namespace: '{{.cluster}}'
