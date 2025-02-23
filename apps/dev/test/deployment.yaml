@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - image: docker.io/yeasy/simple-web:latest
-        name: test
+        name: guestbook-ui
         ports:
         - containerPort: 80

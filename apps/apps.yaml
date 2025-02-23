@@ -17,7 +17,7 @@ spec:
         url: https://kubernetes.default.svc
   template:
     metadata:
-      name: '{{index .path.segments 3}}-{{index .path.segments 2}}' 
+      name: apps-${{cluster}}
     spec:
       project: default
       source:
