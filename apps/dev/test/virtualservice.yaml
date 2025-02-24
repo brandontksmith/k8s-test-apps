@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1
 kind: VirtualService
 metadata:
-  name: httpbin
+  name: test
 spec:
   hosts:
   - "localhost"
