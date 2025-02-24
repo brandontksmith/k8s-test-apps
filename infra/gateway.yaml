@@ -8,9 +8,14 @@ spec:
     istio: ingressgateway
   servers:
   - hosts:
-    - "*.brandontksmith.com"
-    - "brandontksmith.com"
+    - "*"
     port:
       name: http
       number: 80
+      protocol: HTTP
+  - hosts:
+    - "*"
+    port:
+      name: http
+      number: 8080
       protocol: HTTP
