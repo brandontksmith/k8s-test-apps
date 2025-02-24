@@ -9,7 +9,7 @@ spec:
   servers:
   - hosts:
     - "*.brandontksmith.com"
-    - "brandontksmith.com" # UPDATE the domain name
+    - "brandontksmith.com"
     port:
       name: http
       number: 80
