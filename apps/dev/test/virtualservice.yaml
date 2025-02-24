@@ -6,7 +6,7 @@ spec:
   hosts:
   - 'brandon.local'
   gateways:
-  - istio-system/test-gateway2
+  - istio-system/test-gateway
   http:
   - route:
     - destination:
