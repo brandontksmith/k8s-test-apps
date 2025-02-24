@@ -14,7 +14,7 @@ spec:
         app: test
     spec:
       containers:
-      - image: docker.io/yeasy/simple-web:latest
+      - image: gcr.io/google-samples/hello-app:2.0
         name: test
         ports:
-        - containerPort: 9000
+        - containerPort: 8080
