@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: connectivity
+spec:
+  template:
+    spec:
+      containers:
+      - name: test
+        command: ["ping", "test.dev.svc.cluster.local"]
+      restartPolicy: Always
+  backoffLimit: 4
