@@ -4,7 +4,7 @@ metadata:
   name: argocd-virtualserivce
 spec:
   hosts:
-  - argocd.brandontksmith.com
+  - '*'
   gateways:
   - istio-system/test-gateway
   http:
@@ -12,4 +12,4 @@ spec:
     - destination:
         host: argocd-server.argocd.svc.cluster.local
         port:
-          number: 80
+          number: 3000
