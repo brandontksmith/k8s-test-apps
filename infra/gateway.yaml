@@ -13,3 +13,12 @@ spec:
       name: http
       number: 80
       protocol: HTTP
+  - hosts:
+    - "argocd.brandon.local"
+    port:
+      name: https
+      number: 443
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: argocd-credential
