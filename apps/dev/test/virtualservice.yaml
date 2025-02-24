@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1
+kind: VirtualService
+metadata:
+  name: httpbin
+spec:
+  hosts:
+  - "localhost"
+  gateways:
+  - istio-system/test-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /test
+    route:
+    - destination:
+        port:
+          number: 8080
+        host: test
