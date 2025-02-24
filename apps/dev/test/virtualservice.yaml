@@ -4,7 +4,7 @@ metadata:
   name: argocd-virtualserivce
 spec:
   hosts:
-  - '*'
+  - 'brandon.local'
   gateways:
   - istio-system/test-gateway2
   http:
