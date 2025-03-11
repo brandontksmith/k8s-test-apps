@@ -20,7 +20,7 @@ loki:
     storage_config:
       aws:
         region: us-east-1
-        bucketnames: loki-brandon-test
+        bucketnames: loki-chunks-brandon-test,loki-ruler-brandon-test
         s3forcepathstyle: false
     pattern_ingester:
       enabled: true
@@ -34,8 +34,8 @@ loki:
     storage:
       type: s3
       bucketNames:
-          chunks: loki-chunks-brandon-test
-          ruler: loki-ruler-brandon-test
+        chunks: loki-chunks-brandon-test
+        ruler: loki-ruler-brandon-test
 
   deploymentMode: SimpleScalable
 
