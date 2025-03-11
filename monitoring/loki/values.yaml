@@ -30,6 +30,9 @@ loki:
       retention_period: 72h
     querier:
       max_concurrent: 4
+    
+    commonConfig:
+      replication_factor: 1
 
     storage:
       type: s3
@@ -48,7 +51,7 @@ loki:
     enabled: false
 
   read:
-    replicas: 3
+    replicas: 1
 
   write:
     replicas: 1
