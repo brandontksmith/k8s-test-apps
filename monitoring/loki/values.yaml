@@ -40,7 +40,7 @@ loki:
   deploymentMode: SimpleScalable
 
   backend:
-    replicas: 3
+    replicas: 1
     persistence:
       storageClass: gp2
 
@@ -48,7 +48,7 @@ loki:
     enabled: false
 
   read:
-    replicas: 1
+    replicas: 3
 
   write:
     replicas: 1
