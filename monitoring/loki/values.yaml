@@ -43,6 +43,9 @@ loki:
     persistence:
       storageClass: gp2
 
+  chunksCache:
+    enabled: false
+
   read:
     replicas: 3
 
