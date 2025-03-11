@@ -3,4 +3,4 @@ grafana:
     enabled: false
   persistence:
     enabled: true
-    storageClassName: ebs
+    storageClassName: gp2
