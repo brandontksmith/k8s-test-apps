@@ -7,8 +7,7 @@ loki:
     annotations:
       eks.amazonaws.com/role-arn: arn:aws:iam::066731752683:role/LokiRole
   loki:
-    config:
-      auth_enabled: false
+    auth_enabled: false
     schemaConfig:
       configs:
         - from: "2024-04-01"
