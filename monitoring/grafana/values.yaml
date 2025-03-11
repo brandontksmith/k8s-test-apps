@@ -2,7 +2,7 @@ grafana:
   ingress:
     enabled: false
   persistence:
-    enabled: false
+    enabled: true
     storageClassName: gp2
   adminUser: admin
   adminPassword: admin
