@@ -48,7 +48,7 @@ loki:
     enabled: false
 
   read:
-    replicas: 3
+    replicas: 1
 
   write:
     replicas: 3
