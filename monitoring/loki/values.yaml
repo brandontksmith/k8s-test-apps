@@ -40,6 +40,8 @@ loki:
 
   backend:
     replicas: 3
+    persistence:
+      storageClassName: gp2
   read:
     replicas: 3
   write:
@@ -47,7 +49,3 @@ loki:
 
   minio:
     enabled: false
-
-  persistence:
-    enabled: true
-    storageClassName: gp2
