@@ -4,3 +4,5 @@ grafana:
   persistence:
     enabled: true
     storageClassName: gp2
+  adminUser: admin
+  adminPassword: admin
