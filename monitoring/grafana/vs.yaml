@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: grafana-virtualservice
+  namespace: monitoring
+spec:
+  hosts:
+  - grafana.brandontksmith.com
+  gateways:
+  - istio-system/test-gateway
+  http:
+  - route:
+    - destination:
+        host: grafana.monitoring.svc.cluster.local
+        port:
+          number: 80
