@@ -142,21 +142,21 @@ alloy:
           // through.
           output {
             traces = [
-              otelcol.exporter.otlp.tempo.input,
+              otelcol.exporter.otlphttp.tempo.input,
             ]
           }
         }
 
         // Define an OTLP gRPC exporter to send all received traces to GET.
         // The unique label 'tempo' is added to uniquely identify this exporter.
-        otelcol.exporter.otlp "tempo" {
+        otelcol.exporter.otlphttp "tempo" {
           // Define the client for exporting.
           client {
             // Send to the locally running Tempo instance, on port 4317 (OTLP gRPC).
             endpoint = "http://tempo.monitoring.svc.cluster.local:4318"
-            tls {
-              insecure = true
-              insecure_skip_verify = true
-            }
+            //tls {
+            //  insecure = true
+            //  insecure_skip_verify = true
+            //}
           }
         }
