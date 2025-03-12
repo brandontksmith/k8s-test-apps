@@ -142,7 +142,29 @@ alloy:
           // through.
           output {
             traces = [
-              otelcol.exporter.otlphttp.tempo.input,
+              otelcol.processor.k8sattributes.default.input
+            ]
+          }
+        }
+
+        otelcol.processor.k8sattributes "default" {
+          extract {
+            label {
+              from      = "pod"
+              key_regex = "(.*)/(.*)"
+              tag_name  = "$1.$2"
+            }
+
+            metadata = [
+              "k8s.namespace.name",
+              "k8s.pod.name",
+              "k8s.pod.uid"
+            ]
+          }
+
+          output {
+            traces  = [
+              otelcol.exporter.otlphttp.tempo.input
             ]
           }
         }
