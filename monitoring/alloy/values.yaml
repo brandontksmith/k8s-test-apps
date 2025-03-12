@@ -142,7 +142,7 @@ alloy:
           // through.
           output {
             traces = [
-              otelcol.processor.k8sattributes.default.input
+              otelcol.processor.k8sattributes.default.input,
             ]
           }
         }
@@ -158,13 +158,13 @@ alloy:
             metadata = [
               "k8s.namespace.name",
               "k8s.pod.name",
-              "k8s.pod.uid"
+              "k8s.pod.uid",
             ]
           }
 
           output {
             traces  = [
-              otelcol.exporter.otlphttp.tempo.input
+              otelcol.exporter.otlphttp.tempo.input,
             ]
           }
         }
