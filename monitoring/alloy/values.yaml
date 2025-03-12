@@ -137,7 +137,7 @@ alloy:
             endpoint = "0.0.0.0:4318"
           }
 
-          // Output straight to the OTLP gRPC exporter. We would usually do some processing
+          // Output straight to the OTLP HTTP exporter. We would usually do some processing
           // first, most likely batch processing, but for this example we pass it straight
           // through.
           output {
@@ -153,7 +153,7 @@ alloy:
           // Define the client for exporting.
           client {
             // Send to the locally running Tempo instance, on port 4317 (OTLP gRPC).
-            endpoint = "http://tempo.monitoring.svc.cluster.local:4317"
+            endpoint = "http://tempo.testing.svc.cluster.local:4318"
             // Disable TLS for OTLP remote write.
             tls {
                 // The connection is insecure.
