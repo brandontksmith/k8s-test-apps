@@ -1,5 +1,10 @@
 alloy:
   alloy:
+    extraPorts:
+    - name: "otlp"
+      port: 4318
+      targetPort: 4318
+      protocol: "TCP"
     configMap:
       create: true
       content: |-
