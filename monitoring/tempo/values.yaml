@@ -5,9 +5,10 @@ tempo:
     annotations:
       eks.amazonaws.com/role-arn: arn:aws:iam::066731752683:role/TempoRole
 
-  storage:
-    trace:
-      backend: s3
-      s3:
-        region: us-east-1
-        bucket: tempo-brandon-test
+  tempo:
+    storage:
+      trace:
+        backend: s3
+        s3:
+          region: us-east-1
+          bucket: tempo-brandon-test
