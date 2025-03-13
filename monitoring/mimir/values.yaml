@@ -79,27 +79,38 @@ mimir:
         memory: 512Mi
 
   ingester:
-    # Supports 1M Metric Series
-    # persistentVolume:
-    #   size: 50Gi
-    # replicas: 3
-    # resources:
-    #   limits:
-    #     memory: 12Gi
-    #   requests:
-    #     cpu: 3.5
-    #     memory: 8Gi
     persistentVolume:
       size: 10Gi
-      storageClass: gp2
     replicas: 1
     resources:
       limits:
-        memory: 2Gi
+        memory: 12Gi
       requests:
         cpu: 100m
-        memory: 512mi
+        memory: 512Mi
     topologySpreadConstraints: {}
+    affinity:
+      podAntiAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+                - key: target # support for enterprise.legacyLabels
+                  operator: In
+                  values:
+                    - ingester
+            topologyKey: 'kubernetes.io/hostname'
+
+          - labelSelector:
+              matchExpressions:
+                - key: app.kubernetes.io/component
+                  operator: In
+                  values:
+                    - ingester
+            topologyKey: 'kubernetes.io/hostname'
+
+    zoneAwareReplication:
+      enabled: false
+      topologyKey: 'kubernetes.io/hostname'
 
   admin-cache:
     enabled: false
