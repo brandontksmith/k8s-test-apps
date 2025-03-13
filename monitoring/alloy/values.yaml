@@ -189,13 +189,13 @@ alloy:
           }
         }
 
-        /*
         otelcol.exporter.otlphttp "mimir" {
           client {
             endpoint = "http://mimir-nginx.monitoring.svc.cluster.local:80/otlp"
           }
         }
 
+        /*
         prometheus.exporter.self "self_metrics" {
         }
 
