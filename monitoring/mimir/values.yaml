@@ -118,7 +118,6 @@ mimir:
                   values:
                     - ingester
             topologyKey: 'kubernetes.io/hostname'
-
     zoneAwareReplication:
       enabled: false
       topologyKey: 'kubernetes.io/hostname'
