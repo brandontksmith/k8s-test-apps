@@ -51,15 +51,15 @@ mimir:
     #     cpu: 1
     #     memory: 1.5Gi
     persistentVolume:
-      size: 10Gi
+      size: 20Gi
       storageClass: gp2
     replicas: 1
     resources:
       limits:
         memory: 2Gi
       requests:
-        cpu: 250m
-        memory: 1Gi
+        cpu: 100m
+        memory: 512Mi
 
   distributor:
     # Supports 1M Metric Series
