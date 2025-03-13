@@ -24,9 +24,6 @@ mimir:
         s3:
           bucket_name: mimir-ruler-brandon-test
 
-  metaMonitoring:
-    serviceMonitor: enabled
-
   alertmanager:
     enabled: false
     persistentVolume:
