@@ -23,6 +23,14 @@ mimir:
       ruler_storage:
         s3:
           bucket_name: mimir-ruler-brandon-test
+      ingester:
+        ring:
+          zone_awareness_enabled: false
+          replication_factor: 1
+      store_gateway:
+        sharding_ring:
+          zone_awareness_enabled: false
+          replication_factor: 1
 
   alertmanager:
     enabled: false
