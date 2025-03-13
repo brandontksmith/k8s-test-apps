@@ -12,7 +12,7 @@ mimir:
           backend: s3
           s3:
             endpoint: s3.us-east-1.amazonaws.com
-            bucket_name: mimor
+            bucket_name: mimor-brandon-test
             region: us-east-1
       blocks_storage:
         s3:
