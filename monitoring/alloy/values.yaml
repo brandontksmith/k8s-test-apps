@@ -169,6 +169,9 @@ alloy:
             traces  = [
               otelcol.exporter.otlphttp.tempo.input,
             ]
+            metrics = [
+              otelcol.exporter.otlphttp.mimir.input,
+            ]
           }
         }
 
