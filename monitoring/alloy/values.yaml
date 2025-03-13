@@ -194,3 +194,18 @@ alloy:
             endpoint = "http://mimir-nginx.monitoring.svc.cluster.local:80/otlp"
           }
         }
+
+        prometheus.exporter.self "self_metrics" {
+        }
+
+        prometheus.scrape "self_scrape" {
+          targets    = prometheus.exporter.self.self_metrics.targets
+          forward_to = [prometheus.remote_write.mimir.receiver]
+        }
+
+        prometheus.remote_write "mimir" {
+          endpoint {
+            url = "http://mimir-nginx.monitoring.svc.cluster.local:80/api/v1/push"
+          }
+        }
+
