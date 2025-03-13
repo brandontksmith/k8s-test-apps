@@ -28,6 +28,7 @@ mimir:
     enabled: false
     persistentVolume:
       enabled: true
+      storageClass: gp2
     replicas: 2
     resources:
       limits:
@@ -51,6 +52,7 @@ mimir:
     #     memory: 1.5Gi
     persistentVolume:
       size: 10Gi
+      storageClass: gp2
     replicas: 1
     resources:
       limits:
@@ -89,6 +91,7 @@ mimir:
     #     memory: 8Gi
     persistentVolume:
       size: 10Gi
+      storageClass: gp2
     replicas: 1
     resources:
       limits:
@@ -124,19 +127,19 @@ mimir:
     replicas: 1
 
   chunks-cache:
-    enabled: true
+    enabled: false
     replicas: 1
 
   index-cache:
-    enabled: true
+    enabled: false
     replicas: 1
 
   metadata-cache:
-    enabled: true
+    enabled: false
     replicas: 1
 
   results-cache:
-    enabled: true
+    enabled: false
     replicas: 1
 
   minio:
@@ -215,6 +218,7 @@ mimir:
     #     memory: 1.5Gi
     persistentVolume:
       size: 10Gi
+      storageClass: gp2
     replicas: 1
     resources:
       limits:
