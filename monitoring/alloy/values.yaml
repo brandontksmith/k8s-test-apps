@@ -145,7 +145,7 @@ alloy:
               otelcol.processor.k8sattributes.default.input,
             ]
             metrics = [
-              otelcol.processor.k8sattributes.default.input,
+              otelcol.exporter.otlphttp.mimir.input,
             ]
           }
         }
