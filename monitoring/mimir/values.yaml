@@ -120,6 +120,7 @@ mimir:
             topologyKey: 'kubernetes.io/hostname'
 
     zoneAwareReplication:
+      enabled: false
       topologyKey: 'kubernetes.io/hostname'
 
   admin-cache:
@@ -247,6 +248,7 @@ mimir:
                     - store-gateway
             topologyKey: 'kubernetes.io/hostname'
     zoneAwareReplication:
+      enabled: false
       topologyKey: 'kubernetes.io/hostname'
 
   nginx:
