@@ -189,6 +189,7 @@ alloy:
           }
         }
 
+        /*
         otelcol.exporter.otlphttp "mimir" {
           client {
             endpoint = "http://mimir-nginx.monitoring.svc.cluster.local:80/otlp"
@@ -208,4 +209,4 @@ alloy:
             url = "http://mimir-nginx.monitoring.svc.cluster.local:80/api/v1/push"
           }
         }
-
+        */
