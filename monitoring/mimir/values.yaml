@@ -100,27 +100,6 @@ mimir:
         cpu: 100m
         memory: 512mi
     topologySpreadConstraints: {}
-    affinity:
-      podAntiAffinity:
-        requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-                - key: target # support for enterprise.legacyLabels
-                  operator: In
-                  values:
-                    - ingester
-            topologyKey: 'kubernetes.io/hostname'
-
-          - labelSelector:
-              matchExpressions:
-                - key: app.kubernetes.io/component
-                  operator: In
-                  values:
-                    - ingester
-            topologyKey: 'kubernetes.io/hostname'
-    zoneAwareReplication:
-      enabled: false
-      topologyKey: 'kubernetes.io/hostname'
 
   admin-cache:
     enabled: false
