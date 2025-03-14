@@ -160,8 +160,6 @@ alloy:
             name = "http.target"
           }
 
-          aggregation_temporality = "DELTA"
-
           histogram {
             explicit {
               buckets = ["50ms", "100ms", "250ms", "1s", "5s", "10s"]
