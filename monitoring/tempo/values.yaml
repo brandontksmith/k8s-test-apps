@@ -13,3 +13,7 @@ tempo:
           region: us-east-1
           endpoint: s3.us-east-1.amazonaws.com
           bucket: tempo-brandon-test
+
+    metricsGenerator:
+      enabled: true
+      remoteWriteUrl: http://mimir-nginx.monitoring.svc.cluster.local:80/api/v1/write
