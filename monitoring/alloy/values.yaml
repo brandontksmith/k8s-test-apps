@@ -160,10 +160,6 @@ alloy:
             name = "http.target"
           }
 
-          dimension {
-            name = "http.status_code"
-          }
-
           aggregation_temporality = "DELTA"
 
           histogram {
