@@ -151,7 +151,7 @@ alloy:
           }
         }
 
-        otelcol.connector.spanmetrics.default "default" {
+        otelcol.connector.spanmetrics "default" {
           dimension {
             name = "http.method"
           }
