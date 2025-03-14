@@ -143,10 +143,41 @@ alloy:
           output {
             traces = [
               otelcol.processor.k8sattributes.default.input,
+              otelcol.connector.spanmetrics.default.input,
             ]
             metrics = [
               otelcol.exporter.otlphttp.mimir.input,
             ]
+          }
+        }
+
+        otelcol.connector.spanmetrics.default "default" {
+          dimension {
+            name = "http.method"
+          }
+
+          dimension {
+            name = "http.target"
+          }
+
+          dimension {
+            name = "http.status_code"
+          }
+
+          aggregation_temporality = "DELTA"
+
+          histogram {
+            explicit {
+              buckets = ["50ms", "100ms", "250ms", "1s", "5s", "10s"]
+            }
+          }
+
+          metrics_flush_interval = "15s"
+
+          namespace = "traces_spanmetrics"
+
+          output {
+            metrics = [otelcol.exporter.otlp.mimir.input]
           }
         }
 
