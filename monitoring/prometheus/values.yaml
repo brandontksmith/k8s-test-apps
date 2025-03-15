@@ -1,0 +1,9 @@
+prometheus:
+  server:
+  persistentVolume:
+    size: 8Gi
+    storageClass: gpt
+  alertmanager:
+    persistentVolume:
+      size: 2Gi
+      storageClass: gpt
