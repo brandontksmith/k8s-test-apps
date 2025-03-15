@@ -247,7 +247,7 @@ alloy:
 
         prometheus.remote_write "prom" {
           endpoint {
-            url = "http://prometheus-server.monitoring.svc.cluster.local:9090/api/v1/write"
+            url = "http://prometheus-server.monitoring.svc.cluster.local/api/v1/write"
           }
         }
 
