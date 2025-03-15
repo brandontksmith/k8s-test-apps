@@ -180,6 +180,10 @@ alloy:
           }
 
           dimension {
+            name = "http.route"
+          }
+
+          dimension {
             name = "special.attr"
           }
 
