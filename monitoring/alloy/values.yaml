@@ -165,14 +165,6 @@ alloy:
             }
           }
 
-          exemplars {
-            enabled = true
-          }
-
-          events {
-            enabled = true
-          }
-
           metrics_flush_interval = "5s"
 
           resource_metrics_key_attributes:
