@@ -156,7 +156,7 @@ alloy:
           }
 
           dimension {
-            name = "http.status_code"
+            name = "http.target"
           }
 
           histogram {
@@ -165,9 +165,9 @@ alloy:
             }
           }
 
-          metrics_flush_interval = "5s"
+          metrics_flush_interval = "15s"
 
-          resource_metrics_key_attributes:
+          namespace = "traces_spanmetrics"
 
           output {
             metrics = [otelcol.exporter.otlphttp.mimir.input]
