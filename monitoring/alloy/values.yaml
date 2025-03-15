@@ -195,6 +195,8 @@ alloy:
 
           metrics_flush_interval = "5s"
 
+          namespace = "monitoring_metrics"
+
           output {
             metrics = [otelcol.exporter.prometheus.default.input]
           }
