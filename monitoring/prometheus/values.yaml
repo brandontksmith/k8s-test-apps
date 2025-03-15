@@ -3,7 +3,3 @@ prometheus:
     persistentVolume:
       size: 8Gi
       storageClass: gp2
-alertmanager:
-  persistence:
-    size: 2Gi
-    storageClass: gp2
