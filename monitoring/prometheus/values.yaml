@@ -1,8 +1,8 @@
 prometheus:
   server:
-  persistentVolume:
-    size: 8Gi
-    storageClass: gpt
+    persistentVolume:
+      size: 8Gi
+      storageClass: gpt
   alertmanager:
     persistentVolume:
       size: 2Gi
