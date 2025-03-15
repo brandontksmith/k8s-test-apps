@@ -245,12 +245,12 @@ alloy:
 
         prometheus.remote_write "prom" {
           endpoint {
-            url = "http://prometheus-server.monitoring.svc.cluster.local/api/v1/push"
+            url = "http://prometheus-server.monitoring.svc.cluster.local:9090/api/v1/write"
           }
         }
 
-        otelcol.exporter.otlphttp "mimir" {
-          client {
-            endpoint = "http://mimir-nginx.monitoring.svc.cluster.local:80/otlp"
-          }
-        }
+        #otelcol.exporter.otlphttp "mimir" {
+        #  client {
+        #    endpoint = "http://mimir-nginx.monitoring.svc.cluster.local:80/otlp"
+        #  }
+        #}
