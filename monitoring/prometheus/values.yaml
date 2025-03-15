@@ -3,6 +3,8 @@ prometheus:
     persistentVolume:
       size: 8Gi
       storageClass: gp2
+  extraArgs:
+    - web.enable-remote-write-receiver: null
   alertmanager:
     enabled: true
     persistence:
