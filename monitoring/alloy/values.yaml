@@ -142,11 +142,10 @@ alloy:
           // through.
           output {
             traces = [
-              otelcol.processor.k8sattributes.default.input,
-              otelcol.connector.spanmetrics.default.input,
+              otelcol.processor.k8sattributes.default.input
             ]
             metrics = [
-              otelcol.exporter.otlphttp.mimir.input,
+              otelcol.connector.spanmetrics.default.input
             ]
           }
         }
@@ -157,7 +156,7 @@ alloy:
           }
 
           dimension {
-              name = "http.status_code"
+            name = "http.status_code"
           }
 
           histogram {
@@ -170,7 +169,13 @@ alloy:
             enabled = true
           }
 
+          events {
+            enabled = true
+          }
+
           metrics_flush_interval = "5s"
+
+          resource_metrics_key_attributes:
 
           output {
             metrics = [otelcol.exporter.otlphttp.mimir.input]
