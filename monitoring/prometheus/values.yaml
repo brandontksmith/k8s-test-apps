@@ -1,0 +1,10 @@
+prometheus:
+  server:
+    persistentVolume:
+      size: 8Gi
+      storageClass: gp2
+  alertmanager:
+    enabled: true
+    persistence:
+      size: 6Gi
+      storageClass: gp2
