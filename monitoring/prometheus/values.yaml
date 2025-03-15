@@ -6,5 +6,5 @@ prometheus:
   alertmanager:
     enabled: true
     persistence:
-      size: 2Gi
+      size: 4Gi
       storageClass: gpt2
