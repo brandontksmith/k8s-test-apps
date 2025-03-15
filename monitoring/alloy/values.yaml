@@ -220,7 +220,7 @@ alloy:
               otelcol.exporter.otlphttp.tempo.input,
             ]
             metrics = [
-              otelcol.exporter.otlphttp.mimir.input,
+              otelcol.exporter.prometheus.default.input,
             ]
           }
         }
@@ -240,12 +240,12 @@ alloy:
         }
 
         otelcol.exporter.prometheus "default" {
-          forward_to = [prometheus.remote_write.mimir.receiver]
+          forward_to = [prometheus.remote_write.prom.receiver]
         }
 
-        prometheus.remote_write "mimir" {
+        prometheus.remote_write "prom" {
           endpoint {
-            url = "http://mimir-nginx.monitoring.svc.cluster.local:80/api/v1/push"
+            url = "http://prometheus-server.monitoring.svc.cluster.local/api/v1/push"
           }
         }
 
