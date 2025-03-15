@@ -1,0 +1,12 @@
+prometheus:
+  server:
+    persistentVolume:
+      enabled: true
+      size: 8Gi
+      storageClass: gp2
+  alertmanager:
+    enabled: false
+  kube-state-metrics:
+    enabled: false
+  prometheus-node-exporter:
+    enabled: false
