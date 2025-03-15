@@ -142,10 +142,10 @@ alloy:
           // through.
           output {
             traces = [
-              otelcol.processor.k8sattributes.default.input
+              otelcol.processor.k8sattributes.default.input,
             ]
             metrics = [
-              otelcol.connector.spanmetrics.default.input
+              otelcol.connector.spanmetrics.default.input,
             ]
           }
         }
