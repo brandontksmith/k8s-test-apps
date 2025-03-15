@@ -143,6 +143,7 @@ alloy:
           output {
             traces = [
               otelcol.processor.k8sattributes.default.input,
+              otelcol.connector.servicegraph.default.input,
               otelcol.processor.transform.default.input,
             ]
           }
@@ -195,6 +196,13 @@ alloy:
 
           metrics_flush_interval = "5s"
 
+          output {
+            metrics = [otelcol.exporter.prometheus.default.input]
+          }
+        }
+
+        otelcol.connector.servicegraph "default" {
+          dimensions = ["http.method"]
           output {
             metrics = [otelcol.exporter.prometheus.default.input]
           }
