@@ -249,8 +249,8 @@ alloy:
           }
         }
 
-        #otelcol.exporter.otlphttp "mimir" {
-        #  client {
-        #    endpoint = "http://mimir-nginx.monitoring.svc.cluster.local:80/otlp"
-        #  }
-        #}
+        // otelcol.exporter.otlphttp "mimir" {
+        //  client {
+        //    endpoint = "http://mimir-nginx.monitoring.svc.cluster.local:80/otlp"
+        //  }
+        //}
