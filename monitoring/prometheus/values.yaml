@@ -1,6 +1,8 @@
 server:
   persistentVolume:
     size: 8Gi
+    storageClass: gp2
 alertmanager:
   persistentVolume:
     size: 2Gi
+    storageClass: gp2
