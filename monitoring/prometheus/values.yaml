@@ -10,3 +10,5 @@ prometheus:
     persistence:
       size: 6Gi
       storageClass: gp2
+  serverFiles:
+    prometheus.yml: []
