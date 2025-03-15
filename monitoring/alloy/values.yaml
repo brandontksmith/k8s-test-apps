@@ -143,20 +143,44 @@ alloy:
           output {
             traces = [
               otelcol.processor.k8sattributes.default.input,
+              otelcol.processor.transform.default.input,
             ]
-            metrics = [
-              otelcol.connector.spanmetrics.default.input,
+          }
+        }
+
+        otelcol.processor.transform "default" {
+          error_mode = "ignore"
+
+          trace_statements {
+            context = "resource"
+            statements = [
+              // We keep only the "service.name" and "special.attr" resource attributes,
+              // because they are the only ones which otelcol.connector.spanmetrics needs.
+              //
+              // There is no need to list "span.name", "span.kind", and "status.code"
+              // here because they are properties of the span (and not resource attributes):
+              // https://github.com/open-telemetry/opentelemetry-proto/blob/v1.0.0/opentelemetry/proto/trace/v1/trace.proto
+              `keep_keys(attributes, ["service.name", "special.attr"])`,
             ]
+          }
+
+          output {
+            traces  = [otelcol.connector.spanmetrics.default.input]
           }
         }
 
         otelcol.connector.spanmetrics "default" {
           dimension {
-            name = "http.method"
+            name = "http.status_code"
           }
 
           dimension {
-            name = "http.target"
+            name = "http.method"
+            default = "GET"
+          }
+
+          dimension {
+            name = "special.attr"
           }
 
           histogram {
@@ -165,12 +189,10 @@ alloy:
             }
           }
 
-          metrics_flush_interval = "15s"
-
-          namespace = "traces_spanmetrics"
+          metrics_flush_interval = "5s"
 
           output {
-            metrics = [otelcol.exporter.otlphttp.mimir.input]
+            metrics = [otelcol.exporter.prometheus.default.input]
           }
         }
 
@@ -210,6 +232,16 @@ alloy:
             //  insecure = true
             //  insecure_skip_verify = true
             //}
+          }
+        }
+
+        otelcol.exporter.prometheus "default" {
+          forward_to = [prometheus.remote_write.mimir.receiver]
+        }
+
+        prometheus.remote_write "mimir" {
+          endpoint {
+            url = "http://mimir-nginx.monitoring.svc.cluster.local:80/api/v1/push"
           }
         }
 
