@@ -1,0 +1,8 @@
+external-secrets:
+  installCRDs: true
+  
+  serviceAccount:
+    create: true
+    name: external-secrets-operator
+      annotations:
+      eks.amazonaws.com/role-arn: arn:aws:iam::066731752683:role/ExternalSecretsOperatorRole
